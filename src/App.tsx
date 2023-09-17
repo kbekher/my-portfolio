@@ -1,5 +1,4 @@
 
-// import { Header } from './components/Header';
 // import { About } from './components/About';
 // import { Skills } from './components/Skills/Skills';
 // import { Certificates } from './components/Certificates';
@@ -8,10 +7,11 @@
 // import { Footer } from './components/Footer';
 
 import './App.scss';
+import { Header } from './components/Header';
 
 export const App = () => (
   <div className="App">
-    {/* <Header /> */}
+    <Header />
 
     <main className="App__main">
       {/* <About />

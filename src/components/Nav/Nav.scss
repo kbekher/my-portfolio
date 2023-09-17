@@ -1,0 +1,46 @@
+@import '../../styles/utils';
+
+.Nav {
+  display: flex;
+  align-items: center;
+  color: #fff;
+
+  @include onMobile {
+    flex-direction: column;
+  }
+
+  & > :not(:last-child) {
+    margin-right: 48px;
+
+    @include onTablet {
+      margin: 22px;
+    }
+
+    @include onMobile {
+      margin: 0 0 20px;
+    }
+  }
+}
+
+.NavButton {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.1em;
+  transition: $transition;
+
+  &:hover {
+    color: $color-branding;
+  }
+
+  &--contacts {
+    @extend %button-branding-outline;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  @include onTablet {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,22 @@
+@import '../../styles/utils';
+
+.Logo {
+  display: block;
+  width: 52px;
+  height: 38px;
+
+  background-image: url('../../images/logo.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  transition: $transition;
+
+  @include onMobile {
+    width: 42px;
+    height: 28px;
+  }
+
+  &:hover {
+    transform: scale(0.95);
+  }
+}
