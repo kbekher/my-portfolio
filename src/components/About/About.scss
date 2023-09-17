@@ -1,0 +1,66 @@
+@import '../../styles/utils';
+
+.About {
+  @extend %big-container;
+  background-color: $color-section-background;
+  max-height: 574px;
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__text-section {
+    max-width: 454px;
+    padding: 84px 0 84px 64px;
+  }
+
+  &__title {
+    color: $color-branding;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+  }
+
+  &__subtitle {
+    color: #fff;
+    font-size: 64px;
+    line-height: 64px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+
+  &__paragraph {
+    @extend %section-paragraph;
+    margin-bottom: 24px;
+  }
+
+  &__button {
+    @extend %button-branding;
+    display: block;
+    width: max-content;
+  }
+
+  &__img-section {
+    // background-image: url('../../img/decorations/Group3.png'),
+    //   url('../../img/decorations/Group2.png');
+    background-repeat: no-repeat;
+    background-position: left, right;
+    background-size: contain;
+
+    width: 50%;
+    position: relative;
+  }
+
+  &__img {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

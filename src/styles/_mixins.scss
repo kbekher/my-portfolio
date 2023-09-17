@@ -1,3 +1,5 @@
+//320px 480px 760px 960px 1200px 
+
 @mixin onTablet {
   @media (max-width: 1024px) {
     @content;
@@ -5,7 +7,7 @@
 }
 
 @mixin onMobile {
-  @media (max-width: 744px) {
+  @media (max-width: 760px) {
     @content;
   }
 }
