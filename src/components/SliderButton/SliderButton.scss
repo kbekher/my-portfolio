@@ -1,0 +1,31 @@
+@import '../../styles/utils';
+
+.SliderButton {
+  background-color: transparent;
+  border: none;
+
+  &__icon {
+    font-size: 18px;
+    --fa-border-padding: 12px;
+    --fa-border-radius: 100%;
+    color: #ffffff;
+    background-color: #bcabfe;
+    --fa-border-color: #bcabfe;
+
+    transition: $transition;
+    cursor: pointer;
+
+    &:hover {
+      color: #bcabfe;
+      background-color: #3d4052;
+    }
+
+    &--disabled {
+      color: #bcabfe;
+      background-color: #3d4052;
+      --fa-border-color: #3d4052;
+
+      cursor: unset;
+    }
+  }
+}

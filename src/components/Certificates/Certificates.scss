@@ -1,0 +1,119 @@
+@import '../../styles/utils';
+
+.Certificates {
+  padding-top: 80px;
+
+  &__content {
+    height: 496px;
+    background-color: $color-section-background;
+    display: flex;
+  }
+
+  &__text-section {
+    box-sizing: border-box;
+    max-width: 414px;
+    padding: 56px 0 56px 40px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &__title {
+    @extend %section-title;
+    margin-bottom: 16px;
+  }
+
+  &__testimonial {
+    @extend %section-paragraph;
+    margin-bottom: 16px;
+    flex-grow: 1;
+  }
+
+  &__arrows {
+    margin-bottom: 40px;
+  }
+
+  &__button {
+    @extend %button-branding;
+    width: max-content;
+  }
+
+  &__img-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+
+    position: relative;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+
+    &--front {
+      max-width: 548px;
+      max-height: 386px;
+      top: -24px;
+      z-index: 1;
+
+      animation: slideUpFront;
+      animation-duration: 0.8s;
+    }
+
+    &--back {
+      max-width: 488px;
+      max-height: 336px;
+      bottom: -112px;
+
+      animation: slideUpBack;
+      animation-duration: 1s;
+    }
+  }
+}
+
+@keyframes slideUpFront {
+  0% {
+    top: 0;
+  }
+
+  100% {
+    top: -24px;
+  }
+}
+
+@keyframes slideUpBack {
+  0% {
+    bottom: -136px;
+  }
+
+  100% {
+    bottom: -112px;
+  }
+}
+
+.slide-enter,
+.slide-behind-enter {
+  opacity: 0;
+}
+
+.slide-enter-active,
+.slide-behind-enter-active {
+  opacity: 1;
+  transition: $transition-images;
+}
+
+.slide-exit,
+.slide-behind-exit {
+  opacity: 1;
+}
+
+.slide-exit-active,
+.slide-behind-exit-active {
+  opacity: 0;
+  transition: $transition-images;
+}
