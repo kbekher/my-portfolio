@@ -25,6 +25,10 @@
     background-color: $color-button-background;
     color: $color-branding;
   }
+
+  @include onTablet {
+    padding: 10px 22px;
+  }
 }
 
 %button-branding-outline {
@@ -54,6 +58,10 @@
 %section-paragraph {
   color: $color-text;
   font-size: 18px;
+
+  @include onTablet {
+    font-size: 16px;
+  }
 }
 
 %project-title {

@@ -13,6 +13,11 @@
   &__text-section {
     max-width: 454px;
     padding: 84px 0 84px 64px;
+
+    @include onTablet {
+      max-width: 290px;
+      padding: 44px 0 44px 44px;
+    }
   }
 
   &__title {
@@ -30,6 +35,11 @@
     line-height: 64px;
     font-weight: 600;
     margin-bottom: 16px;
+
+    @include onTablet {
+      font-size: 44px;
+      line-height: 44px;
+    }
   }
 
   &__paragraph {
@@ -62,5 +72,9 @@
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
+
+    @include onTablet {
+      max-width: 422px;
+    }
   }
 }

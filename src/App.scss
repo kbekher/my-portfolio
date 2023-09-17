@@ -31,6 +31,10 @@ body {
   &__main {
     flex-grow: 1;
     margin-top: 40px;
+
+    @include onTablet {
+      margin-top: 30px;
+    }
     
     &:last-child {
       margin-bottom: 48px;
