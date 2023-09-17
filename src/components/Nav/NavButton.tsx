@@ -11,12 +11,6 @@ type Props = {
 };
 
 export const NavButton: React.FC<Props> = ({name, path}) => {
-  // const getLinkClass = ({ isActive }: { isActive: boolean }) => (
-  //   cn('NavButton', {
-  //     'NavButton--selected': isActive,
-  //     'NavButton--contacts': name === 'Contact me',
-  //   }));
-
   const { pathname } = useLocation()
 
   return (

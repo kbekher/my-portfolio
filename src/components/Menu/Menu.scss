@@ -1,0 +1,25 @@
+@import '../../styles/utils';
+
+.Menu {
+  text-transform: uppercase;
+  z-index: 2;
+
+  &__content {
+    padding-top: 32px;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  &__close-icon {
+    display: block;
+    width: 32px;
+    height: 32px;
+    background-image: url('../../images/icons/cross.svg');
+    border: none;
+  }
+}

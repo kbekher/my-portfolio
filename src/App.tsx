@@ -1,13 +1,6 @@
-
-// import { About } from './components/About';
-// import { Skills } from './components/Skills/Skills';
-// import { Certificates } from './components/Certificates';
-// import { Projects } from './components/Projects';
-// import { Contacts } from './components/Contacts';
-// import { Footer } from './components/Footer';
+import { Header } from './components/Header';
 
 import './App.scss';
-import { Header } from './components/Header';
 
 export const App = () => (
   <div className="App">
