@@ -7,6 +7,7 @@
 
   @include onMobile {
     flex-direction: column;
+    text-align: center;
   }
 
   & > :not(:last-child) {
@@ -17,7 +18,7 @@
     }
 
     @include onMobile {
-      margin: 0 0 20px;
+      margin: 0 0 40px;
     }
   }
 }
@@ -32,15 +33,24 @@
     color: $color-branding;
   }
 
+  @include onTablet {
+    font-size: 14px;
+  }
+
+  @include onMobile {
+    font-size: 20px;
+  }
+
+
   &--contacts {
     @extend %button-branding-outline;
 
     &:hover {
       color: #fff;
     }
-  }
 
-  @include onTablet {
-    font-size: 14px;
+    @include onMobile {
+      padding: 16px 28px;
+    }
   }
 }

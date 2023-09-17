@@ -10,6 +10,7 @@
 
     @include onMobile {
       flex-direction: column-reverse;
+      padding: 10px 20px 40px;
     }
   }
 
@@ -24,7 +25,8 @@
 
     @include onMobile {
       max-width: 100%;
-      padding: 30px 30px 40px;
+      padding: 0;
+      margin-top: 16px;
     }
   }
 
@@ -48,6 +50,11 @@
       font-size: 44px;
       line-height: 44px;
       margin-bottom: 10px;
+    }
+
+    @include onMobile {
+      font-size: 38px;
+      line-height: 38px;
     }
   }
 
