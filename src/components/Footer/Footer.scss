@@ -1,0 +1,24 @@
+@import '../../styles/utils';
+
+.Footer {
+  display: block;
+  text-align: center;
+  padding: 48px 80px;
+
+  &__link {
+    color: #404751;
+    font-size: 32px;
+    margin: 0 6px;
+    transition: $transition;
+
+    &:hover {
+      color: $color-branding;
+    }
+  }
+
+  &__copyright {
+    margin-top: 10px;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+  }
+}

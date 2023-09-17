@@ -82,9 +82,9 @@ export const Contacts = () => {
               Let's <span className="highlight">Connect!</span>
             </h2>
             <p className="Contacts__paragraph">
-            Feel free to get in touch with me! Whether you have a project in mind,
-            want to collaborate, or just want to say hello, I'd love to hear from you. 
-            Let's connect and bring your ideas to life! ✨
+              Feel free to get in touch with me! Whether you have a project in mind,
+              want to collaborate, or just want to say hello, I'd love to hear from you. 
+              Let's connect and bring your ideas to life! ✨
             </p>
 
             <ul className="Contacts__details">
