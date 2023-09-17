@@ -44,10 +44,10 @@
   }
 
   &__img-section {
-    // background-image: url('../../img/decorations/Group3.png'),
-    //   url('../../img/decorations/Group2.png');
+    background-image: url("../../images/decorations/Group2.png"),
+      url("../../images/decorations/Group3.png");
     background-repeat: no-repeat;
-    background-position: left, right;
+    background-position: right, left;
     background-size: contain;
 
     width: 50%;

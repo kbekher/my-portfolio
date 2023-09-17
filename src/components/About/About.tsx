@@ -13,8 +13,8 @@ export const About = () => (
         </h2>
 
         <p className="About__paragraph">
-          A professional & imaginative front-end developer from Ukraine. Currently based in
-          Germany and is open for new opportunities...
+          A professional &amp; imaginative front-end developer from Ukraine. Currently based in Germany
+          and open to exciting job opportunities! 
         </p>
 
         <Link to='#contacts' className="About__button">
@@ -24,9 +24,9 @@ export const About = () => (
 
       <div className="About__img-section">
         <picture>
-          <source 
-            media="(max-width: 760px)" 
-            srcSet={require("./img/photo-mobile.webp")} 
+          <source
+            media="(max-width: 760px)"
+            srcSet={require("./img/photo-mobile.webp")}
           />
           <img
             src={require("./img/photo.webp")}
