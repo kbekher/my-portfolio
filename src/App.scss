@@ -19,13 +19,13 @@ body {
   flex-direction: column;
   min-height: 100vh;
 
-  // background-image: url("./images/decorations/Group4.png"), url("./images/decorations/Group5.png");
+  background-image: url("./images/decorations/Group4.png"), url("./images/decorations/Group5.png");
   background-repeat: no-repeat;
   background-size: 300px;
   background-position: left 20%, right 40%;
 
   @include onMobile {
-    padding: 0 20px;
+    padding: 0 12px;
   }
 
   &__main {
@@ -34,6 +34,10 @@ body {
 
     @include onTablet {
       margin-top: 30px;
+    }
+
+    @include onMobile {
+      margin-top: 10px;
     }
     
     &:last-child {

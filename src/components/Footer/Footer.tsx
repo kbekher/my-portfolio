@@ -23,7 +23,7 @@ export const Footer = () => (
         <i className="fa-brands fa-instagram instagram-icon" />
       </Link>
       <Link
-        to="https://www.linkedin.com/in/kristina-bekher-96a326241/"
+        to="https://www.linkedin.com/in/kristina-bekher/"
         target="_blank"
         title="Kristina's LinkredIn profile"
         className="Footer__link"

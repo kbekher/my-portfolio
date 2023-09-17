@@ -18,6 +18,10 @@
     @include onTablet {
       justify-content: space-between;
     }
+
+    @include onMobile {
+      padding: 18px 0;
+    }
   }
 
   &__logo {
