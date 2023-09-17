@@ -13,10 +13,9 @@ Check out my [portfolio](https://kbekher.netlify.app/) with some of my notable p
 
 - 📧 Email: [bekherkr@gmail.com](mailto:bekherkr@gmail.com)
 - 💼 LinkedIn: [Kristina Bekher](https://www.linkedin.com/in/kristina-bekher/)
-- 🌐 Portfolio Website: [Kristina Bekher](https://kbekher.netlify.app/)
 
 
-Feel free to reach out if you'd like to collaborate or discuss any projects. I'm always open to new opportunities!
+Feel free to reach out if you'd like to collaborate or discuss any projects. I'm always open to new opportunities! 🙃
 
 <br />
 
