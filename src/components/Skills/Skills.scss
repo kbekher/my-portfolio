@@ -1,0 +1,57 @@
+@import '../../styles/utils';
+
+$skills: (
+  'html',
+  'css',
+  'js',
+  'node',
+  'bootstrap',
+  'scss',
+  'git',
+  'github',
+  'vscode',
+  'react',
+  'redux',
+  'ts'
+);
+
+.Skills {
+  padding-top: 120px;
+  
+  &__title {
+    @extend %section-title;
+    margin-bottom: 20px;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    row-gap: 8px;
+    column-gap: 8px;
+  }
+}
+
+.SkillBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 40px;
+  box-sizing: border-box;
+  height: 184px;
+
+  background-color: $color-section-background;
+  background-repeat: no-repeat;
+  background-position: center 30%;
+  background-size: 50px;
+
+  @each $skill in $skills {
+    &--#{$skill} {
+      background-image: url(../../images/skills/#{$skill}.webp);
+    }
+  }
+
+  &__skill-name {
+    text-align: center;
+    font-size: 16px;
+  }
+}

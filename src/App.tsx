@@ -1,5 +1,6 @@
 import { Header } from './components/Header';
 import { About } from './components/About';
+import { Skills } from './components/Skills';
 
 import './App.scss';
 
@@ -9,8 +10,8 @@ export const App = () => (
 
     <main className="App__main">
       <About />
-      {/* <Skills />
-      <Certificates />
+      <Skills />
+      {/* <Certificates />
       <Projects />
       <Contacts /> */}
     </main>
