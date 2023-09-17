@@ -39,26 +39,28 @@ export const Certificates = () => {
               {testimonial}
             </p>
 
-            <div className="Certificates__arrows">
-              <SliderButton
-                direction={Direction.PREV}
-                handleClick={previousSlide}
-                disabled={currentIndex === 0}
-              />
-              <SliderButton
-                direction={Direction.NEXT}
-                handleClick={nextSlide}
-                disabled={currentIndex === images.length - 1}
-              />
-            </div>
+            <div className="Certificates__buttons">
+              <div className="Certificates__arrows">
+                <SliderButton
+                  direction={Direction.PREV}
+                  handleClick={previousSlide}
+                  disabled={currentIndex === 0}
+                />
+                <SliderButton
+                  direction={Direction.NEXT}
+                  handleClick={nextSlide}
+                  disabled={currentIndex === images.length - 1}
+                />
+              </div>
 
-            <Link
-              to={link}
-              className="Certificates__button"
-              target="_blank"
-            >
-              View Certificate
-            </Link>
+              <Link
+                to={link}
+                className="Certificates__contact-button"
+                target="_blank"
+              >
+                View Certificate
+              </Link>
+            </div>
           </div>
 
           <div className="Certificates__img-section">
@@ -66,9 +68,11 @@ export const Certificates = () => {
               <CSSTransition key={currentIndex} timeout={500} classNames="slide">
                 <img src={require(`./img/${images[currentIndex]}.jpg`)} alt="Slider" className="Certificates__img Certificates__img--front" />
               </CSSTransition>
-              <CSSTransition key={getNextIndex(currentIndex)} timeout={500} classNames="slide-behind">
-                <img src={require(`./img/${images[getNextIndex(currentIndex)]}.jpg`)} alt="Slider" className="Certificates__img Certificates__img--back" />
-              </CSSTransition>
+              {window.innerWidth > 1024 && (
+                <CSSTransition key={getNextIndex(currentIndex)} timeout={500} classNames="slide-behind">
+                  <img src={require(`./img/${images[getNextIndex(currentIndex)]}.jpg`)} alt="Slider" className="Certificates__img Certificates__img--back" />
+                </CSSTransition>
+              )}
             </TransitionGroup>
           </div>
         </div>

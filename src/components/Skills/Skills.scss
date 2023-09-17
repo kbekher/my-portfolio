@@ -17,7 +17,16 @@ $skills: (
 
 .Skills {
   padding-top: 120px;
-  
+
+  @include onTablet {
+    padding-top: 100px;
+  }
+
+  @include onMobile {
+    padding-top: 20px;
+    margin-top: 50px;
+  }
+
   &__title {
     @extend %section-title;
     margin-bottom: 20px;
@@ -28,6 +37,10 @@ $skills: (
     grid-template-columns: repeat(6, 1fr);
     row-gap: 8px;
     column-gap: 8px;
+
+    @include onMobile {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 }
 
@@ -48,6 +61,12 @@ $skills: (
     &--#{$skill} {
       background-image: url(../../images/skills/#{$skill}.webp);
     }
+  }
+
+  @include onTablet {
+    height: 144px;
+    padding-bottom: 20px;
+    background-size: 40px;
   }
 
   &__skill-name {

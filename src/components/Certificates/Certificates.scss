@@ -7,15 +7,33 @@
     height: 496px;
     background-color: $color-section-background;
     display: flex;
+
+    @include onTablet {
+      height: 584px;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 40px;
+    }
+
+    @include onMobile {
+      padding: 10px 20px 40px;
+    }
   }
 
   &__text-section {
     box-sizing: border-box;
-    max-width: 414px;
+    max-width: 400px;
     padding: 56px 0 56px 40px;
+    margin-right: 10px;
     display: flex;
     flex-direction: column;
     height: 100%;
+
+    @include onTablet {
+      padding: 0;
+      margin: 0 0 20px;
+      max-width: 100%;
+    }
   }
 
   &__title {
@@ -27,15 +45,44 @@
     @extend %section-paragraph;
     margin-bottom: 16px;
     flex-grow: 1;
+
+    @include onTablet {
+      flex-grow: unset;
+      height: max-content;
+    }
+  }
+
+  &__buttons {
+    @include onTablet {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @include onMobile {
+      flex-direction: column;
+    }
   }
 
   &__arrows {
     margin-bottom: 40px;
+
+    @include onTablet {
+      margin: 0;
+    }
+
+    @include onMobile {
+      margin-bottom: 14px;
+    }
   }
 
-  &__button {
+  &__contact-button {
     @extend %button-branding;
+    box-sizing: border-box;
     width: max-content;
+
+    @include onMobile {
+      width: 100%;
+    }
   }
 
   &__img-section {
@@ -43,8 +90,12 @@
     flex-direction: column;
     align-items: center;
     flex-grow: 1;
-
     position: relative;
+
+    @include onTablet {
+      display: block;
+
+    }
   }
 
   &__img {
@@ -54,6 +105,16 @@
     left: 50%;
     transform: translateX(-50%);
     border-radius: 10px;
+    object-fit: contain;
+    object-position: left top;
+
+    @include onTablet {
+      position: static;
+      transform: none;
+      display: block;
+      margin: 0 auto;
+      animation: none; 
+    }
 
     &--front {
       max-width: 548px;
@@ -63,6 +124,11 @@
 
       animation: slideUpFront;
       animation-duration: 0.8s;
+
+      @include onTablet {
+        max-width: 440px;
+        max-height: auto;
+      }
     }
 
     &--back {
@@ -72,6 +138,10 @@
 
       animation: slideUpBack;
       animation-duration: 1s;
+
+      @include onTablet {
+        display: none;
+      }
     }
   }
 }
@@ -116,4 +186,8 @@
 .slide-behind-exit-active {
   opacity: 0;
   transition: $transition-images;
+
+  @include onTablet {
+    transition-duration: 0s;
+  }
 }

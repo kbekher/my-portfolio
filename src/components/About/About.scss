@@ -86,7 +86,7 @@
 
     @include onMobile {
       width: 100%;
-      background-image: none;
+      background-size: 50%;
       padding-top: 20px;
     }
   }
@@ -106,7 +106,7 @@
 
     @include onMobile {
       position: static;
-      transform: translateX(0);
+      transform: none;
       display: block;
       margin: 0 auto;
 

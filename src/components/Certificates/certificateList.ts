@@ -2,7 +2,7 @@ export const certificateList = [
   {
     name: "shecodes-basics",
     testimonial:
-      "In the SheCode Basics program, I gained a solid foundation in web development. I learned essential HTML, CSS, and JavaScript skills, enabling me to create responsive and visually appealing websites",
+      "In the SheCode Basics program, I gained a solid foundation in web development. I learned essential HTML, CSS, and JavaScript skills, enabling me to create responsive and visually appealing websites.",
     link: "https://www.shecodes.io/certificates/dc4e6b642e7a27d77f67af0d5d72de68",
   },
   {
