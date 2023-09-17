@@ -1,6 +1,6 @@
 import { projects } from './projectsList';
 import { Project } from './Project';
-// import { LandingSlider } from '../LandingSlider';
+import { LandingSlider } from '../LandingSlider';
 
 import './Projects.scss';
 
@@ -18,7 +18,7 @@ export const Projects = () => {
 
 
         <div className="Projects__landings-section">
-        {/* <LandingSlider /> */}
+        <LandingSlider />
         </div>
       </div>
     </div>

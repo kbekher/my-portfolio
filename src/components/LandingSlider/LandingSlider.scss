@@ -1,0 +1,79 @@
+@import '../../styles/utils';
+
+.LandingSlider {
+  background-color: $color-section-background;
+  padding: 56px 40px;
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  row-gap: 32px;
+
+  &__text-section {
+    max-width: 550px;
+  }
+
+  &__title {
+    @extend %section-title;
+    margin-bottom: 8px;
+  }
+
+  &__paragpraph {
+    @extend %section-paragraph;
+  }
+
+  &__buttons {
+    display: flex;
+    align-self: flex-end;
+  }
+
+  &__items-container {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &__items {
+    display: flex;
+
+    & > *:not(:last-child) {
+      margin-right: 16px;
+    }
+  }
+
+  &__item {
+    position: relative;
+    background-color: $color-background;
+    border-radius: 10px;
+    height: 210px;
+
+    &:hover .LandingSlider__item-img {
+      opacity: 0.1;
+    }
+
+    &:hover .LandingSlider__item-title {
+      opacity: 1;
+    }
+  }
+
+  &__item-title {
+    @extend %project-title;
+    color: $color-branding;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    opacity: 0;
+  }
+
+  &__item-img {
+    width: 330px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  &__item-title,
+  &__item-img {
+    transition: $transition;
+  }
+}
