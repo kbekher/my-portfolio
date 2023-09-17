@@ -1,0 +1,62 @@
+%big-container {
+  margin: 0 auto;
+  max-width: 1336px;
+}
+
+%button {
+  border: 1px solid $color-branding;
+  border-radius: 87px;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;
+  transition: $transition;
+  cursor: pointer;
+}
+
+%button-branding {
+  @extend %button;
+  background-color: $color-branding;
+  color: #fff;
+  font-weight: 800;
+  padding: 16px 42px;
+
+  &:hover {
+    background-color: $color-button-background;
+    color: $color-branding;
+  }
+}
+
+%button-branding-outline {
+  @extend %button;
+  background-color: $color-button-background;
+  color: $color-branding;
+  font-weight: 600;
+  padding: 12px 24px;
+
+  &:hover {
+    background-color: $color-branding;
+    color: #fff;
+  }
+
+  @include onTablet {
+    padding: 8px 22px;
+  }
+}
+
+%section-title {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+%section-paragraph {
+  color: $color-text;
+  font-size: 18px;
+}
+
+%project-title {
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+}

@@ -1,0 +1,49 @@
+@import './styles/utils';
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  background-color: $color-background;
+  color: $color-text;
+}
+
+.App {
+  @extend %big-container;
+  padding: 0 52px;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  // background-image: url('./img/decorations/Group5.png'), url(./img/decorations/Group4.png);
+  background-repeat: no-repeat;
+  background-size: 300px;
+  background-position: right 40%, left 20%;
+
+  @include onMobile {
+    padding: 0 20px;
+  }
+
+  &__main {
+    flex-grow: 1;
+    margin-top: 40px;
+    
+    &:last-child {
+      margin-bottom: 48px;
+    }
+  }
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1110px;
+  padding: 0 20px;
+}
+
+.highlight {
+  color: $color-branding;
+}
