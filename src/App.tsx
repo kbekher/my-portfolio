@@ -2,6 +2,7 @@ import { Header } from './components/Header';
 import { About } from './components/About';
 import { Skills } from './components/Skills';
 import { Certificates } from './components/Certificates';
+import { Projects } from './components/Projects';
 
 import './App.scss';
 
@@ -13,8 +14,8 @@ export const App = () => (
       <About />
       <Skills />
       <Certificates />
-      {/* <Projects />
-      <Contacts /> */}
+      <Projects />
+      {/* <Contacts /> */}
     </main>
 
     {/* <Footer /> */}

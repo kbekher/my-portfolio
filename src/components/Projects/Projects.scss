@@ -1,0 +1,70 @@
+@import '../../styles/utils';
+
+.Projects {
+  padding-top: 160px;
+
+  &__title {
+    @extend %section-title;
+    margin-bottom: 40px;
+  }
+
+  &__projects-section {
+    & > * {
+      margin-bottom: 80px;
+    }
+  }
+}
+
+.Project {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  row-gap: 32px;
+
+  &__text-section {
+    max-width: 550px;
+    position: relative;
+    padding-left: 10px;
+  }
+
+  &__number {
+    color: $color-branding;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+
+    &::before {
+      content: "";
+      width: 2px;
+      height: 47px;
+      background-color: $color-branding;
+      position: absolute;
+      left: 0;
+      transform: translateY(-50%);
+    }
+  }
+
+  &__title {
+    @extend %project-title;
+    color: $color-text;
+  }
+
+  &__paragraph {
+    color: $color-text;
+    font-size: 16px;
+  }
+
+  &__button {
+    @extend %button-branding-outline;
+    align-self: flex-end;
+  }
+
+  &__img {
+    width: 100%;
+    max-height: 536px;
+    object-fit: cover;
+    object-position: top center;
+  }
+}
+
