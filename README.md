@@ -10,12 +10,13 @@ A passionate front-end developer, and this is where I showcase my work and share
 Check out my [portfolio](https://kbekher.netlify.app/) with some of my notable projects!
 
 ## Connect with me:
-👩‍💻
 
 - 📧 Email: [bekherkr@gmail.com](mailto:bekherkr@gmail.com)
 - 💼 LinkedIn: [Kristina Bekher](https://www.linkedin.com/in/kristina-bekher/)
 - 🌐 Portfolio Website: [Kristina Bekher](https://kbekher.netlify.app/)
 
+
+Feel free to reach out if you'd like to collaborate or discuss any projects. I'm always open to new opportunities!
 
 <br />
 
@@ -23,7 +24,6 @@ Check out my [portfolio](https://kbekher.netlify.app/) with some of my notable p
 <img align="left" alt="TypeScript" width="26px" src="https://cdn.worldvectorlogo.com/logos/typescript-2.svg" />
 <img align="left" alt="React" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png" />
 <img align="left" alt="Redux" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/redux/redux.png" />
-<img align="left" alt="Next.js" width="26px" src="https://raw.githubusercontent.com/Rohan-Shakya/Rohan-Shakya/master/images/next_logo.png" />
 <img align="left" alt="HTML5" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png" />
 <img align="left" alt="CSS3" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png" />
 <img align="left" alt="Sass" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/sass/sass.png" />
