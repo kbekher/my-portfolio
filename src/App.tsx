@@ -3,6 +3,7 @@ import { About } from './components/About';
 import { Skills } from './components/Skills';
 import { Certificates } from './components/Certificates';
 import { Projects } from './components/Projects';
+import { Contacts } from './components/Contacts';
 
 import './App.scss';
 
@@ -15,7 +16,7 @@ export const App = () => (
       <Skills />
       <Certificates />
       <Projects />
-      {/* <Contacts /> */}
+      <Contacts />
     </main>
 
     {/* <Footer /> */}

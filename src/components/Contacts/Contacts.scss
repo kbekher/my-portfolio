@@ -1,0 +1,131 @@
+@import '../../styles/utils';
+
+.Contacts {
+  padding-top: 120px;
+
+  &__content {
+    height: 580px;
+    box-sizing: border-box;
+    padding: 90px 54px 70px;
+    background-color: $color-section-background;
+    display: flex;
+    justify-content: space-between;
+
+    background-image: url("../../images/decorations/Group9.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+  }
+
+  &__text-section {
+    max-width: 420px;
+    margin-right: 20px;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 64px;
+    line-height: 64px;
+    margin-bottom: 16px;
+  }
+
+  &__paragraph {
+    @extend %section-paragraph;
+    margin-bottom: 40px;
+    max-width: 380px;
+  }
+
+  &__details {
+    font-size: 16px;
+    line-height: 16px;
+  }
+
+  &__detail {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+
+    & > * :not(:last-child) {
+      margin-bottom: 8px;
+    }
+  }
+
+  &__icon {
+    margin-right: 16px;
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    background-color: $color-section-background;
+    --fa-border-color: $color-section-background;
+    --fa-border-padding: 10px;
+    --fa-border-radius: 100%;
+  }
+
+
+  &__form-section {
+    flex-grow: 1;
+  }
+
+
+  &__form {
+    max-width: 448px;
+    margin: 0 auto;
+  }
+
+  &__form-title {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  &__form-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px 24px;
+    margin-bottom: 8px;
+    background-color: $color-background;
+    border: 1px solid $color-background;
+    border-radius: 8px;
+    color: rgba(193, 196, 199, 1);
+    outline: none;
+    position: relative;
+
+    &::placeholder {
+      color: #c1c4c7;
+      opacity: 0.5;
+    }
+
+    &:focus {
+      background-color: $color-background;
+      border: 1px solid $color-background;
+      box-shadow: 0 4px 4px 4px rgba(41, 46, 61, 0.5);
+      color: rgba(193, 196, 199, 1);
+    }
+
+    &--textarea {
+      padding: 24px 20px 60px 20px;
+      font-family: 'Poppins', sans-serif;
+      resize: none;
+    }
+  }
+
+  &__form-button {
+    @extend %button-branding;
+    display: block;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  &__form-message {
+    display: block;
+    margin: 0 auto;
+    width: max-content;
+  }
+}
+
+.error-icon {
+  position: absolute;
+  transform: translate(-150%, 100%);
+}
