@@ -7,8 +7,8 @@ import { Direction } from '../../types/Direction';
 import './LandingSlider.scss';
 
 const sliderSettings = {
-  containerWidth: 1040,
-  cardWidth: 500,
+  containerWidth: 942,
+  cardWidth: 330,
   cardGap: 16,
   cardsPerPage: 3,
 };
@@ -17,16 +17,15 @@ export const LandingSlider = () => {
   const {
     cardWidth,
     cardGap,
-    cardsPerPage,
   } = sliderSettings;
 
-  // let { cardsPerPage } = sliderSettings;
+  let { cardsPerPage } = sliderSettings;
 
-  // if (window.innerWidth < 600) {
-  //   cardsPerPage = 1;
-  // } else if (window.innerWidth < 884) {
-  //   cardsPerPage = 2;
-  // }
+  if (window.innerWidth < 760) {
+    cardsPerPage = 1;
+  } else if (window.innerWidth < 1024) {
+    cardsPerPage = 2;
+  }
 
   const [lastVisibleCard, setLastVisibleCard] = useState(cardsPerPage);
   const totalCards = landings.length;

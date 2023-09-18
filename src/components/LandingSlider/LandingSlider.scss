@@ -9,6 +9,11 @@
   justify-content: space-between;
   row-gap: 32px;
 
+  @include onMobile {
+    row-gap: 16px;
+    padding: 20px 20px 40px;
+  }
+
   &__text-section {
     max-width: 550px;
   }

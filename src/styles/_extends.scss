@@ -58,6 +58,10 @@
   font-size: 32px;
   font-weight: 600;
   text-transform: uppercase;
+
+  @include onMobile {
+    font-size: 26px;
+  }
 }
 
 %section-paragraph {
