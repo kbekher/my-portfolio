@@ -3,6 +3,10 @@
 .Contacts {
   padding-top: 120px;
 
+  @include onMobile {
+    padding-top: 80px;
+  }
+
   &__content {
     height: 580px;
     box-sizing: border-box;
@@ -15,11 +19,26 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-position: right;
+
+    @include onTablet {
+      height: auto;
+      padding: 50px 30px;
+    }
+
+    @include onMobile {
+      padding: 40px 20px 40px;
+      flex-direction: column;
+      row-gap: 16px;
+    }
   }
 
   &__text-section {
     max-width: 420px;
     margin-right: 20px;
+
+    @include onMobile {
+      max-width: 100%;
+    }
   }
 
   &__title {
@@ -27,17 +46,35 @@
     font-size: 64px;
     line-height: 64px;
     margin-bottom: 16px;
+
+    @include onTablet {
+      font-size: 50px;
+      line-height: 50px;
+    }
   }
 
   &__paragraph {
     @extend %section-paragraph;
     margin-bottom: 40px;
     max-width: 380px;
+
+    @include onTablet {
+      margin-bottom: 20px;
+    }
+
+    @include onMobile {
+      max-width: 100%;
+    }
   }
 
   &__details {
     font-size: 16px;
     line-height: 16px;
+
+    @include onTablet {
+      font-size: 14px;
+      line-height: 14px;
+    }
   }
 
   &__detail {
@@ -59,17 +96,23 @@
     --fa-border-color: $color-section-background;
     --fa-border-padding: 10px;
     --fa-border-radius: 100%;
-  }
 
+    @include onTablet {
+      margin-right: 8px;
+    }
+  }
 
   &__form-section {
     flex-grow: 1;
   }
 
-
   &__form {
     max-width: 448px;
     margin: 0 auto;
+
+    @include onMobile {
+      max-width: 100%;
+    }
   }
 
   &__form-title {
@@ -116,6 +159,11 @@
     display: block;
     width: 100%;
     margin-bottom: 8px;
+
+    &:disabled {
+      @extend %button-branding-outline;
+      opacity: 0.1;
+    }
   }
 
   &__form-message {

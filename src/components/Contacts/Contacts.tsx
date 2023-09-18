@@ -11,6 +11,7 @@ export const Contacts = () => {
   const form = useRef<HTMLFormElement>(null);
   const [isSent, setIsSent] = useState(false);
   const [formErrorMessage, setFormErrorMessage] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -24,16 +25,19 @@ export const Contacts = () => {
   const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setName(event.target.value);
     setIsNameError(false);
+    setIsSent(false);
   };
 
   const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value);
     setIsEmailError(false);
+    setIsSent(false);
   };
 
   const handleBodyChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     setBody(event.target.value);
     setIsBodyError(false);
+    setIsSent(false);
   };
   // #endregion
 
@@ -49,6 +53,7 @@ export const Contacts = () => {
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     setFormErrorMessage('');
+    setIsSent(false);
 
     const modifiedName = name.trim();
     const modifiedEmail = email.trim();
@@ -63,11 +68,14 @@ export const Contacts = () => {
     }
 
     if (form.current) {
+      setIsSubmitting(true);
       emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
         .then(() => {
           setIsSent(true);
+          setIsSubmitting(false);
           reset();
         }, () => {
+          setIsSubmitting(false);
           setFormErrorMessage('Oops, seems like we could not send your message. Please, try again!');
         });
     }
@@ -154,7 +162,11 @@ export const Contacts = () => {
                 </span>
               )}
 
-              <button type="submit" className="Contacts__form-button">
+              <button 
+                type="submit" 
+                className="Contacts__form-button"
+                disabled={isSubmitting}
+              >
                 Contact me
               </button>
             </form>
