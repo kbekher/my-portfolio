@@ -22,11 +22,11 @@ export const Certificates = () => {
   };
 
   const nextSlide = () => {
-    setCurrentIndex((currentIndex + 1) % images.length);
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
 
   const previousSlide = () => {
-    setCurrentIndex((currentIndex + images.length - 1) % images.length);
+    setCurrentIndex((prevIndex) => (prevIndex + images.length - 1) % images.length);
   };
 
   return (
@@ -39,40 +39,60 @@ export const Certificates = () => {
               {testimonial}
             </p>
 
-            <div className="Certificates__buttons">
-              <div className="Certificates__arrows">
-                <SliderButton
-                  direction={Direction.PREV}
-                  handleClick={previousSlide}
-                  disabled={currentIndex === 0}
-                />
-                <SliderButton
-                  direction={Direction.NEXT}
-                  handleClick={nextSlide}
-                  disabled={currentIndex === images.length - 1}
-                />
-              </div>
-
-              <Link
-                to={link}
-                className="Certificates__contact-button"
-                target="_blank"
-              >
-                View Certificate
-              </Link>
+            <div className="Certificates__arrows">
+              <SliderButton
+                direction={Direction.PREV}
+                handleClick={previousSlide}
+                disabled={currentIndex === 0}
+              />
+              <SliderButton
+                direction={Direction.NEXT}
+                handleClick={nextSlide}
+                disabled={currentIndex === images.length - 1}
+              />
             </div>
+
+            <div className="Certificates__img-container">
+              <img
+                src={require(`./img/${images[currentIndex]}.jpg`)}
+                alt="certificate"
+                className="Certificates__img Certificates__img--front"
+              />
+            </div>
+
+            <Link
+              to={link}
+              className="Certificates__contact-button"
+              target="_blank"
+            >
+              View Certificate
+            </Link>
           </div>
 
           <div className="Certificates__img-section">
             <TransitionGroup>
-              <CSSTransition key={currentIndex} timeout={500} classNames="slide">
-                <img src={require(`./img/${images[currentIndex]}.jpg`)} alt="Slider" className="Certificates__img Certificates__img--front" />
+              <CSSTransition
+                key={currentIndex}
+                timeout={500}
+                classNames="slide"
+              >
+                <img
+                  src={require(`./img/${images[currentIndex]}.jpg`)}
+                  alt="certificate"
+                  className="Certificates__img Certificates__img--front"
+                />
               </CSSTransition>
-              {window.innerWidth > 1024 && (
-                <CSSTransition key={getNextIndex(currentIndex)} timeout={500} classNames="slide-behind">
-                  <img src={require(`./img/${images[getNextIndex(currentIndex)]}.jpg`)} alt="Slider" className="Certificates__img Certificates__img--back" />
-                </CSSTransition>
-              )}
+              <CSSTransition
+                key={getNextIndex(currentIndex)}
+                timeout={500}
+                classNames="slide-behind"
+              >
+                <img
+                  src={require(`./img/${images[getNextIndex(currentIndex)]}.jpg`)}
+                  alt="certificate"
+                  className="Certificates__img Certificates__img--back"
+                />
+              </CSSTransition>
             </TransitionGroup>
           </div>
         </div>
