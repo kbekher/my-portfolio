@@ -105,7 +105,7 @@ export const Contacts = () => {
               </li>
               <li className="Contacts__detail">
                 <i className="fa-regular fa-envelope fa-border Contacts__icon" />
-                <span>bekherkr@gmail.com</span>
+                <span>krbekher@gmail.com</span>
               </li>
             </ul>
           </div>
@@ -171,11 +171,11 @@ export const Contacts = () => {
               </button>
             </form>
 
-            {isSent && (
+            {isSent ? (
               <p className="Contacts__form-message">
                 {formErrorMessage ? formErrorMessage : 'Thanks for your message! 🥰'}
               </p>
-            )}
+            ) : <p className="Contacts__form-message"> {' '} </p>}
           </div>
         </div>
       </div>

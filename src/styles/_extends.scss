@@ -19,12 +19,15 @@
 }
 
 %button-branding {
+  $paddingY: 16px;
+  
   @extend %button;
   background-color: $color-branding;
   color: #fff;
   font-weight: 800;
-  padding: 16px 42px;
+  padding: $paddingY 42px;
   letter-spacing: 0.1em;
+  height: $paddingY * 2 + 24px;
 
   &:hover {
     background-color: $color-button-background;
@@ -32,7 +35,8 @@
   }
 
   @include onTablet {
-    padding: 10px 22px;
+    $paddingY: 10px;
+    padding: $paddingY 22px;
   }
 }
 
