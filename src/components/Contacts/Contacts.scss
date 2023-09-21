@@ -82,7 +82,7 @@
     align-items: center;
     margin-bottom: 8px;
 
-    & > * :not(:last-child) {
+    &>* :not(:last-child) {
       margin-bottom: 8px;
     }
   }
@@ -152,6 +152,15 @@
       font-family: 'Poppins', sans-serif;
       resize: none;
     }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      border: 1px solid $color-background;
+      -webkit-text-fill-color: rgba(193, 196, 199, 1);
+      -webkit-box-shadow: 0 4px 4px 4px rgba(41, 46, 61, 0.5);
+      transition: $transition;
+    }
   }
 
   &__form-button {
@@ -159,7 +168,6 @@
     display: block;
     width: 100%;
     margin-bottom: 8px;
-    box-sizing: border-box;
 
     &:disabled {
       @extend %button-branding-outline;
