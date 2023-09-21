@@ -19,24 +19,27 @@
 }
 
 %button-branding {
-  $paddingY: 16px;
-  
   @extend %button;
   background-color: $color-branding;
   color: #fff;
   font-weight: 800;
-  padding: $paddingY 42px;
+  padding: 16px 42px;
   letter-spacing: 0.1em;
-  height: $paddingY * 2 + 24px;
 
-  &:hover {
+  &:visited {
+    background-color: $color-branding;
+    color: #fff;
+  }
+
+  &:hover,
+  &:active,
+  &:disabled {
     background-color: $color-button-background;
     color: $color-branding;
   }
 
   @include onTablet {
-    $paddingY: 10px;
-    padding: $paddingY 22px;
+    padding: 10px 22px;
   }
 }
 
@@ -47,7 +50,14 @@
   font-weight: 600;
   padding: 12px 24px;
 
-  &:hover {
+  &:visited {
+    background-color: $color-button-background;
+    color: $color-branding;
+  }
+
+  &:hover,
+  &:active,
+  &:disabled {
     background-color: $color-branding;
     color: #fff;
   }

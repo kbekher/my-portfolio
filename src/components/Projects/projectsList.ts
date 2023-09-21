@@ -20,7 +20,7 @@ export const projects = [
     title: "Todo App",
     description:
       "Stay organized and boost productivity with React Todo App! Intuitive and user-friendly application helps user to track, modify and manage tasks efficiently.",
-    url: "https://kbekher.github.io/react_todo-app/",
+    url: "https://kbekher.github.io/react-todo-app/",
     imgPath: "todo-app",
   }
 ];
