@@ -16,6 +16,7 @@
     align-items: center;
 
     @include onTablet {
+      padding: 20px 0;
       justify-content: space-between;
     }
 

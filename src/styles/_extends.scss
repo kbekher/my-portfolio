@@ -73,7 +73,7 @@
   font-weight: 600;
   text-transform: uppercase;
 
-  @include onMobile {
+  @include onTablet {
     font-size: 26px;
   }
 }
@@ -83,7 +83,7 @@
   font-size: 18px;
 
   @include onTablet {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 

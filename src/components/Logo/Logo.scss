@@ -11,7 +11,7 @@
 
   transition: $transition;
 
-  @include onMobile {
+  @include onTablet {
     width: 42px;
     height: 28px;
   }

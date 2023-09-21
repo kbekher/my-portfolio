@@ -38,35 +38,36 @@ export const Certificates = () => {
             <p className="Certificates__testimonial">
               {testimonial}
             </p>
+            <div className="Certificates__actions">
+              <div className="Certificates__arrows">
+                <SliderButton
+                  direction={Direction.PREV}
+                  handleClick={previousSlide}
+                  disabled={currentIndex === 0}
+                />
+                <SliderButton
+                  direction={Direction.NEXT}
+                  handleClick={nextSlide}
+                  disabled={currentIndex === images.length - 1}
+                />
+              </div>
 
-            <div className="Certificates__arrows">
-              <SliderButton
-                direction={Direction.PREV}
-                handleClick={previousSlide}
-                disabled={currentIndex === 0}
-              />
-              <SliderButton
-                direction={Direction.NEXT}
-                handleClick={nextSlide}
-                disabled={currentIndex === images.length - 1}
-              />
+              <Link
+                to={link}
+                className="Certificates__contact-button"
+                target="_blank"
+              >
+                View Certificate
+              </Link>
             </div>
 
             <div className="Certificates__img-container">
               <img
-                src={require(`./img/${images[currentIndex]}.jpg`)}
+                src={require(`./img/${images[currentIndex]}.webp`)}
                 alt="certificate"
-                className="Certificates__img Certificates__img--front"
+                className="Certificates__img"
               />
             </div>
-
-            <Link
-              to={link}
-              className="Certificates__contact-button"
-              target="_blank"
-            >
-              View Certificate
-            </Link>
           </div>
 
           <div className="Certificates__img-section">
@@ -74,23 +75,23 @@ export const Certificates = () => {
               <CSSTransition
                 key={currentIndex}
                 timeout={500}
-                classNames="slide"
+                classNames="frontSlide"
               >
                 <img
-                  src={require(`./img/${images[currentIndex]}.jpg`)}
+                  src={require(`./img/${images[currentIndex]}.webp`)}
                   alt="certificate"
-                  className="Certificates__img Certificates__img--front"
+                  className="Certificates__img frontSlide"
                 />
               </CSSTransition>
               <CSSTransition
                 key={getNextIndex(currentIndex)}
                 timeout={500}
-                classNames="slide-behind"
+                classNames="backSlide"
               >
                 <img
-                  src={require(`./img/${images[getNextIndex(currentIndex)]}.jpg`)}
+                  src={require(`./img/${images[getNextIndex(currentIndex)]}.webp`)}
                   alt="certificate"
-                  className="Certificates__img Certificates__img--back"
+                  className="Certificates__img backSlide"
                 />
               </CSSTransition>
             </TransitionGroup>

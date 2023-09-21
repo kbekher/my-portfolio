@@ -5,16 +5,6 @@ import { Nav } from '../Nav';
 import './Header.scss';
 
 export const Header = () => {
-  // const { pathname } = useLocation();
-
-  // const navigate = useNavigate();
-
-  // const handleMenuClick = () => {
-  //   if (pathname === '/menu') {
-  //     navigate(-1);
-  //   }
-  // };
-
   return (
     <header className="Header">
       <div className="Header__content">
