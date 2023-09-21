@@ -7,6 +7,10 @@
     padding-top: 90px;
   }
 
+  @include onMobile {
+    padding-top: 70px;
+  }
+
   &__title {
     @extend %section-title;
     margin-bottom: 40px;
