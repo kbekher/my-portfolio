@@ -8,7 +8,7 @@
     padding-top: 24px;
 
     @include onMobile {
-      padding-top: 18px;
+      padding: 18px 12px 0;
     }
   }
 

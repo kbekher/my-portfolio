@@ -5,14 +5,24 @@
   text-align: center;
   padding: 48px 80px;
 
+  @include onMobile {
+    padding: 20px 40px;
+  }
+
   &__link {
     color: #404751;
     font-size: 32px;
     margin: 0 6px;
     transition: $transition;
 
-    &:hover {
+    &:hover,
+    &:active,
+    &:disabled {
       color: $color-branding;
+    }
+
+    @include onMobile {
+      font-size: 24px;
     }
   }
 
@@ -20,5 +30,9 @@
     margin-top: 10px;
     font-size: 12px;
     letter-spacing: 0.1em;
+
+    @include onMobile {
+      font-size: 8px;
+    }
   }
 }
