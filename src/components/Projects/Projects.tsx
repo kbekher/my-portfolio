@@ -1,6 +1,6 @@
 import { projects } from './projectsList';
 import { Project } from './Project';
-import { LandingSlider } from '../LandingSlider';
+// import { LandingSlider } from '../LandingSlider';
 
 import './Projects.scss';
 
@@ -15,11 +15,10 @@ export const Projects = () => {
             <Project key={project.id} project={project} />
           ))}
         </div>
-
-
+{/* 
         <div className="Projects__landings-section">
         <LandingSlider />
-        </div>
+        </div> */}
       </div>
     </div>
   );

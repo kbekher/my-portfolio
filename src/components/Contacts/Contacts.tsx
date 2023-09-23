@@ -7,63 +7,91 @@ const SERVICE_ID = 'service_0lkajj1';
 const TEMPLATE_ID = 'template_lgbkrpn';
 const PUBLIC_KEY = 'J1VAP8MMyBRlLDJNs';
 
+interface FormData {
+  name: string;
+  email: string;
+  text: string;
+}
+
 export const Contacts = () => {
   const form = useRef<HTMLFormElement>(null);
   const [isSent, setIsSent] = useState(false);
   const [formErrorMessage, setFormErrorMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [body, setBody] = useState('');
+  const [formData, setFormData] = useState<FormData>({
+    name: '',
+    email: '',
+    text: '',
+  });
 
-  const [isNameError, setIsNameError] = useState(false);
-  const [isEmailError, setIsEmailError] = useState(false);
-  const [isBodyError, setIsBodyError] = useState(false);
+  const [isNameError, setIsNameError] = useState<boolean>(false);
+  const [isEmailError, setIsEmailError] = useState<boolean>(false);
+  const [isBodyError, setIsBodyError] = useState<boolean>(false);
 
-  // #region handlers
-  const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setName(event.target.value);
+
+  const nameInputRef = useRef<HTMLInputElement>(null);
+  const emailInputRef = useRef<HTMLInputElement>(null);
+  const textInputRef = useRef<HTMLTextAreaElement>(null);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
     setIsNameError(false);
-    setIsSent(false);
-  };
-
-  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(event.target.value);
     setIsEmailError(false);
-    setIsSent(false);
-  };
-
-  const handleBodyChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setBody(event.target.value);
     setIsBodyError(false);
     setIsSent(false);
   };
-  // #endregion
+
+  const areAllFieldsFilled = () => {
+    return formData.name.trim() !== '' && formData.email.trim() !== '' && formData.text.trim() !== '';
+  };
+
+  const isEmailValid = () => {
+    // Return true if the email is valid, otherwise return false
+    const emailRegex = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+    return emailRegex.test(formData.email);
+  };
+
+  const setFieldsErrors = () => {
+    setIsNameError(!formData.name.trim());
+    setIsEmailError(!isEmailValid());
+    setIsBodyError(!formData.text.trim());
+  };
+
+  const handleEnterKey = (
+    e: React.KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>,
+    ref: React.RefObject<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      if (areAllFieldsFilled() && isEmailValid()) {
+        handleSubmit(e);
+      } else {
+        setFieldsErrors();
+        ref.current?.focus();
+      }
+    }
+  };
+
 
   const reset = () => {
-    setName('');
-    setEmail('');
-    setBody('');
+    setFormData({
+      name: '',
+      email: '',
+      text: '',
+    });
     setIsNameError(false);
     setIsEmailError(false);
     setIsBodyError(false);
-  }
+  };
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     setFormErrorMessage('');
     setIsSent(false);
 
-    const modifiedName = name.trim();
-    const modifiedEmail = email.trim();
-    const modifiedBody = body.trim();
-
-    setIsNameError(!modifiedName);
-    setIsEmailError(!modifiedEmail);
-    setIsBodyError(!modifiedBody);
-
-    if (!modifiedName || !modifiedEmail || !modifiedBody) {
+    if (!areAllFieldsFilled() && !isEmailValid()) {
+      setFieldsErrors();
       return;
     }
 
@@ -91,7 +119,7 @@ export const Contacts = () => {
             </h2>
             <p className="Contacts__paragraph">
               Feel free to get in touch with me! Whether you have a project in mind,
-              want to collaborate, or just want to say hello, I'd love to hear from you. 
+              want to collaborate, or just want to say hello, I'd love to hear from you.
               Let's connect and bring your ideas to life! ✨
             </p>
 
@@ -122,8 +150,10 @@ export const Contacts = () => {
                 type="text"
                 name="name"
                 className="Contacts__form-input"
-                value={name}
-                onChange={handleNameChange}
+                value={formData.name}
+                onChange={handleInputChange}
+                onKeyDown={(e) => handleEnterKey(e, emailInputRef)}
+                ref={nameInputRef}
                 placeholder="Name"
                 autoComplete="off"
               />
@@ -137,8 +167,11 @@ export const Contacts = () => {
                 type="email"
                 name="email"
                 className="Contacts__form-input"
-                value={email}
-                onChange={handleEmailChange}
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                value={formData.email}
+                onChange={handleInputChange}
+                onKeyDown={(e) => handleEnterKey(e, textInputRef)}
+                ref={emailInputRef}
                 placeholder="Email"
                 autoComplete="off"
               />
@@ -149,10 +182,12 @@ export const Contacts = () => {
               )}
 
               <textarea
-                name="message"
+                name="text"
                 className="Contacts__form-input Contacts__form-input--textarea"
-                value={body}
-                onChange={handleBodyChange}
+                value={formData.text}
+                onChange={handleInputChange}
+                onKeyDown={(e) => handleEnterKey(e, textInputRef)}
+                ref={textInputRef}
                 placeholder="Subject"
               ></textarea>
 
@@ -162,8 +197,8 @@ export const Contacts = () => {
                 </span>
               )}
 
-              <button 
-                type="submit" 
+              <button
+                type="submit"
                 className="Contacts__form-button"
                 disabled={isSubmitting}
               >
