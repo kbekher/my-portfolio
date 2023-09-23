@@ -15,7 +15,7 @@
 
     @include onMobile {
       flex-direction: column;
-      height: auto;
+      height: 500px;
       padding: 20px 20px 40px;
     }
   }
@@ -38,7 +38,6 @@
       height: 100%;
       max-width: 100%;
       margin: 0;
-      flex-wrap: wrap;
     }
   }
 
@@ -71,6 +70,7 @@
       display: flex;
       justify-content: space-between;
       margin-bottom: 20px;
+      flex-wrap: wrap;
     }
   }
 
@@ -78,8 +78,7 @@
     margin-bottom: 40px;
 
     @include onTablet {
-      align-self: flex-end;
-      margin: 0;
+      margin-bottom: 20px;
     }
   }
 
@@ -98,6 +97,9 @@
 
     @include onMobile {
       display: block;
+      position: relative;
+      max-width: 100%;
+      height: 300px;
     }
   }
 
@@ -127,11 +129,16 @@
     }
 
     @include onMobile {
-      width: 100%;
-      height: 100%;
-      position: static;
       transform: none;
       transition: $transition;
+      position: absolute;
+      max-width: 100%;
+      max-height: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
     }
   }
 }
