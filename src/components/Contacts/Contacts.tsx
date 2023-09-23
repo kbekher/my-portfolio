@@ -14,7 +14,7 @@ interface FormData {
 }
 
 export const Contacts = () => {
-  const form = useRef<HTMLFormElement>(null);
+  const form = useRef<HTMLFormElement >(null);
   const [isSent, setIsSent] = useState(false);
   const [formErrorMessage, setFormErrorMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -29,10 +29,6 @@ export const Contacts = () => {
   const [isEmailError, setIsEmailError] = useState<boolean>(false);
   const [isBodyError, setIsBodyError] = useState<boolean>(false);
 
-
-  const nameInputRef = useRef<HTMLInputElement>(null);
-  const emailInputRef = useRef<HTMLInputElement>(null);
-  const textInputRef = useRef<HTMLTextAreaElement>(null);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -58,21 +54,16 @@ export const Contacts = () => {
     setIsBodyError(!formData.text.trim());
   };
 
-  const handleEnterKey = (
-    e: React.KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>,
-    ref: React.RefObject<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
+  const handleEnterKey = (e: React.KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     if (e.key === 'Enter') {
       e.preventDefault();
       if (areAllFieldsFilled() && isEmailValid()) {
         handleSubmit(e);
       } else {
         setFieldsErrors();
-        ref.current?.focus();
       }
     }
   };
-
 
   const reset = () => {
     setFormData({
@@ -102,10 +93,15 @@ export const Contacts = () => {
           setIsSent(true);
           setIsSubmitting(false);
           reset();
-        }, () => {
-          setIsSubmitting(false);
+          const firstInput = form.current?.elements[0] as HTMLInputElement | undefined;
+          if (firstInput) {
+            firstInput.focus();
+          }
+        })
+        .catch(() => {
           setFormErrorMessage('Oops, seems like we could not send your message. Please, try again!');
-        });
+        })
+        .finally(() => setIsSubmitting(false));
     }
   };
 
@@ -152,8 +148,7 @@ export const Contacts = () => {
                 className="Contacts__form-input"
                 value={formData.name}
                 onChange={handleInputChange}
-                onKeyDown={(e) => handleEnterKey(e, emailInputRef)}
-                ref={nameInputRef}
+                onKeyDown={(e) => handleEnterKey(e)}
                 placeholder="Name"
                 autoComplete="off"
               />
@@ -170,8 +165,7 @@ export const Contacts = () => {
                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                 value={formData.email}
                 onChange={handleInputChange}
-                onKeyDown={(e) => handleEnterKey(e, textInputRef)}
-                ref={emailInputRef}
+                onKeyDown={(e) => handleEnterKey(e)}
                 placeholder="Email"
                 autoComplete="off"
               />
@@ -186,8 +180,7 @@ export const Contacts = () => {
                 className="Contacts__form-input Contacts__form-input--textarea"
                 value={formData.text}
                 onChange={handleInputChange}
-                onKeyDown={(e) => handleEnterKey(e, textInputRef)}
-                ref={textInputRef}
+                onKeyDown={(e) => handleEnterKey(e)}
                 placeholder="Subject"
               ></textarea>
 
