@@ -10,7 +10,7 @@ import './Certificates.scss';
 export const Certificates = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const { testimonial, link } = certificateList[currentIndex];
-  const images = [];
+  const images: Array<string> = [];
 
   for (let i = 0; i < certificateList.length; i++) {
     images.push(certificateList[i].name);

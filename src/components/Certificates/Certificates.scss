@@ -27,7 +27,6 @@
     margin-right: 10px;
     display: flex;
     flex-direction: column;
-    height: 100%;
 
     @include onTablet {
       padding: 0;
@@ -62,6 +61,8 @@
     @include onMobile {
       flex-grow: unset;
       margin-bottom: 14px;
+      max-height: 130px;
+      height: 100%;
     }
   }
 
@@ -146,6 +147,7 @@
 .frontSlide {
   max-width: 550px;
   max-height: 370px;
+  transition: $transition;
 
   width: 90%;
   z-index: 1;
@@ -158,10 +160,17 @@
 
 .frontSlide-enter {
   opacity: 0;
+  transform: translate(-50%, -50%);
 }
 
 .frontSlide-enter-active {
   opacity: 1;
+  transform: translate(-50%, -80%);
+  transition: $transition;
+
+  @include onTablet {
+    transform: translate(-50%, -100%);
+  }
 }
 
 .frontSlide-exit {
@@ -170,6 +179,7 @@
 
 .frontSlide-exit-active {
   opacity: 0;
+  transition: opacity 300ms;
 }
 
 .backSlide {
@@ -177,6 +187,7 @@
   max-height: 335px;
   width: 80%;
   transform: translate(-50%, 10%);
+  transition: $transition;
 
   @include onTablet {
     transform: translate(-50%, -20%);
@@ -185,17 +196,24 @@
 
 .backSlide-enter {
   opacity: 0;
+  transform: translate(-50%, 30%);
 }
 
 .backSlide-enter-active {
   opacity: 1;
+  transform: translate(-50%, 10%);
+  transition: $transition;
+
+  @include onTablet {
+    transform: translate(-50%, -20%);
+  }
 }
 
 .backSlide-exit {
   opacity: 1;
-
 }
 
 .backSlide-exit-active {
   opacity: 0;
+  transition: opacity 300ms;
 }
