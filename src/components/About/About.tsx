@@ -24,10 +24,10 @@ export const About = () => (
 
       <div className="About__img-section">
         <picture>
-          {/* <source
+          <source
             media="(max-width: 760px)"
             srcSet={require("./img/photo-mobile.webp")}
-          /> */}
+          />
           <img
             src={require("./img/photo.webp")}
             className="About__img"
