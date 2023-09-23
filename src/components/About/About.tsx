@@ -14,7 +14,7 @@ export const About = () => (
 
         <p className="About__paragraph">
           A professional &amp; imaginative front-end developer from Ukraine. Currently based in Germany
-          and open to exciting job opportunities! 
+          and open to exciting job opportunities!
         </p>
 
         <Link to='#contacts' className="About__button">
