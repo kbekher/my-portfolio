@@ -2,13 +2,25 @@
 
 .Header {
   @extend %big-container;
+  padding: 0 52px;
 
-  position: sticky;
+  position: fixed;
   top: 0;
-  width: 100%;
+  left: 0;
+  right: 0;
+  height: 90px;
 
   background-color: $color-background;
   z-index: 2;
+
+  @include onTablet {
+    height: 82px;
+  }
+
+  @include onMobile {
+    padding: 0 12px;
+    height: 70px;
+  }
 
   &__content {
     padding: 24px 0;

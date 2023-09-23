@@ -3,6 +3,11 @@
 .About {
   @extend %big-container;
   background-color: $color-section-background;
+  margin-top: 100px;
+
+  @include onMobile {
+    margin-top: 64px;
+  }
 
   &__content {
     display: flex;
